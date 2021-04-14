@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+      <h3 class="headName">Заголовок</h3>
+      <p>Песня</p><iframe class="frameDiv" src=""></iframe>
+      <button class="next">Впёред</button>
+      <button class="prev">Назад</button>
+
+
+
+      <script type="text/javascript">
+          let prev = document.querySelector(".prev")
+          let next = document.querySelector(".next")
+
+          let frameDiv = document.querySelector(".frameDiv")
+
+          let headName = document.querySelector(".headName")
+
+          let playlist = ['Infraction_-_Just_Evil.mp3', 'Forget_the_Whale_-_You._Me._Talk._Now..mp3', 'Smoking_With_Poets_-_Pain_t__On_Me.mp3']
+
+          let index = 0;
+
+          frameDiv.src = playlist[index];
+
+          headName.innerHTML = playlist[index];
+
+
+          next.onclick = function(){
+              frameDiv.src = playlist[index];
+              headName.innerHTML = playlist[index];
+              index = index + 1;
+              if (index > 2) {
+                index = 0
+              }
+          }
+          prev.onclick = function(){
+              frameDiv.src = playlist[index];
+              headName.innerHTML = playlist[index];
+              index = index - 1;
+              if (index < 0) {
+                index = 2
+              }
+          }
+      </script>
+</body>
+</html>
